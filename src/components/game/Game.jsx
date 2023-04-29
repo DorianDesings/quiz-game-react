@@ -4,7 +4,6 @@ import { QUESTIONS } from '../../constants/questions';
 import Answer from '../answer/Answer';
 import FinalScore from '../final-score/FinalScore';
 import gameReducer from '../reducers/game-reducer';
-import Timer from '../timer/Timer';
 import { StyledAnswers, StyledCard, StyledQuestion } from './styles';
 
 const Game = () => {
@@ -26,11 +25,11 @@ const Game = () => {
 
 			{!isLastQuestion && (
 				<>
-					<Timer
+					{/* <Timer
 						dispatch={dispatch}
 						currentQuestion={gameState.currentQuestion}
 						isLastQuestion={isLastQuestion}
-					/>
+					/> */}
 
 					<StyledQuestion>
 						{QUESTIONS[gameState.currentQuestion].question}
