@@ -1,9 +1,8 @@
+import { motion } from 'framer-motion';
 import { QUESTIONS } from '../../constants/questions';
 import { StyledCorrect, StyledIncorrect } from './styles';
-import { motion } from 'framer-motion';
 
-const FinalScore = ({ gameState }) => {
-	const { userAnswers } = gameState;
+const FinalScore = ({ userAnswers }) => {
 	return (
 		<>
 			<h2>FINAL RESULT</h2>
@@ -35,24 +34,20 @@ const FinalScore = ({ gameState }) => {
 };
 
 const compareAnswers = (correctAnswer, userAnswer) => {
-	if (userAnswer) {
-		if (correctAnswer === userAnswer) {
-			return (
-				<span>
-					<span>{correctAnswer}</span> -
-					<StyledCorrect> {userAnswer}</StyledCorrect>
-				</span>
-			);
-		} else {
-			return (
-				<span>
-					<span>{correctAnswer}</span> -
-					<StyledIncorrect> {userAnswer}</StyledIncorrect>
-				</span>
-			);
-		}
+	if (correctAnswer === userAnswer) {
+		return (
+			<span>
+				<span>{correctAnswer}</span> -
+				<StyledCorrect> {userAnswer}</StyledCorrect>
+			</span>
+		);
 	} else {
-		return <span>Not Answered</span>;
+		return (
+			<span>
+				<span>{correctAnswer}</span> -
+				<StyledIncorrect> {userAnswer}</StyledIncorrect>
+			</span>
+		);
 	}
 };
 
