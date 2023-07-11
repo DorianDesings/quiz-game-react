@@ -62,6 +62,7 @@ const saveUserAnswer = (
 	setUserAnswers
 ) => {
 	setUserAnswers([...userAnswers, answer]);
+
 	setCurrentQuestion(currentQuestion + 1);
 };
 
